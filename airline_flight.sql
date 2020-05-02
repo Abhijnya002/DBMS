@@ -79,34 +79,34 @@ where a.cruisingrange >( select min(f.distance)
 						from flights f
 						where f.ffrom = 'Bangalore' AND f.fto = 'Delhi' );
 
-/*vii.	A customer wants to travel from Bangalore to Delhi with no more than two changes of flight. List the choice of departure times from Madison if the customer wants to arrive in New York by 6 p.m.*/
+/*vii.A customer wants to travel from Bangalore to Delhi with no more than two changes of flight. List the choice of departure times from Madison if the customer wants to arrive in New York by 6 p.m.*/
 SELECT F.departs
 FROM Flights F
 WHERE F.flno IN ( ( SELECT F0.flno
  FROM Flights F0
- WHERE F0.ffrom = ‘Bangalore’ AND F0.tto = ‘Delhi’
+ WHERE F0.ffrom = â€˜Bangaloreâ€™ AND F0.tto = â€˜Delhiâ€™
  AND extract(hour from F0.arrives) < 18 )
  UNION
 ( SELECT F0.flno
  FROM Flights F0, Flights F1
- WHERE F0.ffrom = ‘Bangalore’ AND F0.tto <> ‘Delhi’
- AND F0.tto = F1.ffrom AND F1.tto = ‘Delhi’
+ WHERE F0.ffrom = â€˜Bangaloreâ€™ AND F0.tto <> â€˜Delhiâ€™
+ AND F0.tto = F1.ffrom AND F1.tto = â€˜Delhiâ€™
  AND F1.departs > F0.arrives
  AND extract(hour from F1.arrives) < 18)
  UNION
 ( SELECT F0.flno
  FROM Flights F0, Flights F1, Flights F2
- WHERE F0.ffrom = ‘Bangalore’
+ WHERE F0.ffrom = â€˜Bangaloreâ€™
  AND F0.tto = F1.ffrom
  AND F1.tto = F2.ffrom
- AND F2.tto = ‘Delhi’
- AND F0.tto <> ‘Delhi’
- AND F1.tto <> ‘Delhi’
+ AND F2.tto = â€˜Delhiâ€™
+ AND F0.tto <> â€˜Delhiâ€™
+ AND F1.tto <> â€˜Delhiâ€™
  AND F1.departs > F0.arrives
  AND F2.departs > F1.arrives
  AND extract(hour from F2.arrives) < 18));
  
-/* viii.	Print the name and salary of every non-pilot whose salary is more than the average salary for pilots.*/
+/*Print the name and salary of every non-pilot whose salary is more than the average salary for pilots.*/
 
 SELECT E.ename, E.salary
 FROM Employees E
