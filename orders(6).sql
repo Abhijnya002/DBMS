@@ -32,7 +32,7 @@ foreign key (Customer_id) references CUSTOMER(Customer_id));
 
 INSERT INTO ORDERS VALUES (50, 5000, '04-MAY-17', 10, 1000),(51, 450, '20-JAN-17', 10, 2000), (52, 1000, '24-FEB-17', 13, 2000),(53, 3500, '13-APR-17', 14, 3000), (54, 550, '09-MAR-17', 12, 2000);
 
-/*1. Count the customers with grades above Bangalore’s average. */
+/*1. Count the customers with grades above Bangaloreâ€™s average. */
 
 select Count(*) 
 from CUSTOMER
