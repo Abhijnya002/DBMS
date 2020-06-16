@@ -107,7 +107,7 @@ INSERT INTO IAMARKS (USN, SUBCODE, SSID, TEST1, TEST2, TEST3) VALUES ('1RN13CS09
 , (USN, SUBCODE, SSID, TEST1, TEST2, TEST3) VALUES ('1RN13CS091','10CS84','CSE8C', 20, 16, 19) 
 , (USN, SUBCODE, SSID, TEST1, TEST2, TEST3) VALUES ('1RN13CS091','10CS85','CSE8C', 15, 15, 12);
 
-/*1. List all the student details studying in fourth semester ‘C’ section. */
+/*1. List all the student details studying in fourth semester â€˜Câ€™ section. */
 
 SELECT S.*, SS.SEM, SS.SEC 
 FROM STUDENT S, SEMSEC SS, CLASS C 
@@ -125,7 +125,7 @@ ORDER BY SEM;
 
 
 
-/*3. Create a view of Test1 marks of student USN ‘1BI15CS101’ in all subjects. */
+/*3. Create a view of Test1 marks of student USN â€˜1BI15CS101â€™ in all subjects. */
 CREATE VIEW STU_TEST1_MARKS_VIEW 
 AS 
 SELECT TEST1, SUBCODE 
@@ -135,9 +135,9 @@ WHERE USN = '1RN13CS091';
 SELECT * FROM STU_TEST1_MARKS_VIEW;
 
 /*5. Categorize students based on the following criterion: 
-If FinalIA = 17 to 20 then CAT = ‘Outstanding’ 
-If FinalIA = 12 to 16 then CAT = ‘Average’ 
-If FinalIA< 12 then CAT = ‘Weak’ 
+If FinalIA = 17 to 20 then CAT = â€˜Outstandingâ€™ 
+If FinalIA = 12 to 16 then CAT = â€˜Averageâ€™ 
+If FinalIA< 12 then CAT = â€˜Weakâ€™ 
 Give these details only for 8th semester A, B, and C section students. */
 SELECT S.USN,S.SNAME,S.ADDRESS,S.PHONE,S.GENDER, 
 (CASE 
