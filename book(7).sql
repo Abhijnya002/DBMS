@@ -69,7 +69,7 @@ INSERT INTO CARD VALUES (100),(101), (102),(103), (104);
 
 INSERT INTO BOOK_LENDING VALUES ('2017-01-01','2017-06-01', 1, 10, 101),('2017-01-11','2017-03-11', 3, 14, 101),('2017-02-21','2017-04-21', 2, 13, 101),('2017-03-15','2017-07-15', 4, 11, 101), ('2017-04-12','2017-05-12', 1, 11, 104); 
 
-/*1. Retrieve details of all books in the library – id, title, name of publisher, authors, number of copies in each branch, etc. */
+/*1. Retrieve details of all books in the library â€“ id, title, name of publisher, authors, number of copies in each branch, etc. */
 
 SELECT B.BOOK_ID, B.TITLE, B.PNAME, A.ANAME, C.NO_OF_COPIES, L.BRANCH_ID 
 FROM BOOK B, AUTHOR A, BOOK_COPIES C, LIBRARY_BRANCH L 
