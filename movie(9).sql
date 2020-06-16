@@ -46,7 +46,7 @@ INSERT INTO MOVIE_CAST VALUES (301, 1002, 'HEROINE'),(301, 1001, 'HEROINE'), (30
 
 INSERT INTO RATING VALUES (1001, 4), (1002, 2), (1003, 5),(1004, 4);
 
-/*1. List the titles of all movies directed by ‘Hitchcock’. */
+/*1. List the titles of all movies directed by â€˜Hitchcockâ€™. */
 
 SELECT MOV_TITLE 
 FROM MOVIES 
@@ -81,7 +81,7 @@ GROUP BY MOV_TITLE
 HAVING MAX(REV_STARS)>0 
 ORDER BY MOV_TITLE;
 
-/*5. Update rating of all movies directed by ‘Steven Spielberg’ to 5 KL */
+/*5. Update rating of all movies directed by â€˜Steven Spielbergâ€™ to 5 KL */
 
 UPDATE RATING 
 SET REV_STARS=5 
